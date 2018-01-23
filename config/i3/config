@@ -37,6 +37,9 @@ exec setxkbmap -layout de
 # start redshift
 exec redshift
 
+# start nm-applet
+exec nm-applet
+
 # move workspace to left and right monitors
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
