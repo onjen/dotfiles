@@ -37,6 +37,9 @@ exec setxkbmap -layout de
 # start redshift
 exec redshift
 
+# add key to authentication agent
+exec ssh-add
+
 # start nm-applet
 exec nm-applet
 
