@@ -51,10 +51,10 @@ bindsym $mod+Shift+bracketright move workspace to output right
 new_window 1pixel
 
 # lock
-bindsym Mod4+l exec i3lock
+bindsym Mod4+l exec i3lock -c 333333
 
 # lock and suspend
-bindsym Mod4+s exec i3lock && systemctl suspend
+bindsym Mod4+s exec i3lock -c 333333 && systemctl suspend
 
 # screenshot
 bindsym --release Print exec scrot -s '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Pictures/shots/'
