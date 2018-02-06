@@ -1,7 +1,13 @@
 " GENERAL SETTINGS
+" ================
 set number
 
-"### VIM-PLUG SETTINGS
+" Highlight Past Column 80
+highlight ColorColumn ctermbg=234
+execute "set colorcolumn=" . join(range(81,335), ',')
+
+" VIM-PLUG SETTINGS
+" =================
 "   Neovim ~/.local/share/nvim/plugged
 "   https://github.com/junegunn/vim-plug
 "   run :PlugInstall to install them
@@ -11,10 +17,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'zchee/deoplete-jedi'
 
+Plug 'w0rp/ale'
+
 " Initialize plugin system
 call plug#end()
 
 " PLUGIN SETTINGS
+" ===============
+"
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
 " tab autocomplete for deoplete
@@ -26,3 +36,5 @@ function! s:check_back_space() abort "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
+" enable ale linter whenever available
+let g:ale_completion_enabled = 1
