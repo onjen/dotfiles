@@ -1,0 +1,7 @@
+# screen backlight
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+# keyboard backlight
+ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chgrp video /sys/devices/platform/thinkpad_acpi/leds/tpacpi::kbd_backlight/brightness"
+ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chmod g+w /sys/devices/platform/thinkpad_acpi/leds/tpacpi::kbd_backlight/brightness"
+
