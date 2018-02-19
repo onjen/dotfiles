@@ -46,6 +46,9 @@ exec nm-applet
 # set trackpoint accelecration
 exec xinput --set-prop 12 'libinput Accel Speed' -0.75
 
+# start dropbox
+exec dropbox start
+
 # move workspace to left and right monitors
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
