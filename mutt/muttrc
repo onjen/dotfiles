@@ -1,0 +1,61 @@
+source "~/.mutt/magazino"
+
+# local caching
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+
+# imap refresh
+set timeout=5
+# mutt checks for new mails on every keystroke
+set mail_check=5
+
+set pager_index_lines=10 	# number of index lines to show
+set pager_context=3     # number of context lines to show when scrolling
+set pager_stop=yes   # don't go to next message automatically
+set menu_scroll=yes   # scroll in menus
+set tilde=yes   # show tildes like in vim
+unset markers # no ugly plus signs
+
+set editor="nvim -c 'set spell' -c 'set spelllang=de,en'"
+
+## html view options
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# Delete messages without asking when Mutt is quit
+set delete=yes
+
+# ask if the whole message including attachments should be forwarded
+set mime_forward=ask-no
+
+# speedup folders switch
+set sleep_time = 0
+
+# Macros
+set confirmappend=no
+macro index,pager D "<save-message>=Done\n<sync-mailbox>"
+
+# sidebar options
+set sidebar_visible=no
+
+# rebind keys for
+# G for end of pager
+# gg for start
+
+# colors from /usr/share/doc/mutt/examples
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment brightblue black
+color prompt brightmagenta black
+color message white black
+color error brightred black
+color indicator brightwhite blue
+color status black brightblue
+color tree white black
+color normal white black
+color markers brightblue black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index brightblue black "~N|~O"
