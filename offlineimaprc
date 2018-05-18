@@ -1,0 +1,31 @@
+[general]
+accounts = magazino
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+[Account magazino]
+localrepository = magazino-local
+remoterepository = magazino-remote
+maxconnections = 3
+maxage = 30
+
+[Repository magazino-local]
+type = Maildir
+localfolders = ~/Mail/magazino
+
+[Repository magazino-remote]
+type = IMAP
+remotehost = mail.mein-exchange.de
+remoteuser = rothe@magazino.eu
+remotepassfile = ~/.password.offlineimap
+realdelete = no
+maxconnections = 3
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername in ['INBOX', 'Sent', 'Drafts', 'Done', 'Todo', 'Reservierungen', 'Confluence']
