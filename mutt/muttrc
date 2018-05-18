@@ -1,13 +1,21 @@
-source "~/.mutt/magazino"
+# simplify folder change
+# cronjob for offlineimap
+# also update when the cursor is not moving
 
-# local caching
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
+# SMTP setting (smtp_pass is set in sourced file)
+source "~/.mutt/mag_smtp"
+set smtp_url='smtp://rothe@magazino.eu@mail.mein-exchange.de'
+set ssl_force_tls = yes
+set realname="Johannes Rothe"
+set from="rothe@magazino.eu"
+set use_from = yes
 
-# imap refresh
-set timeout=5
-# mutt checks for new mails on every keystroke
-set mail_check=5
+set folder="~/Mail/"
+set spoolfile="+magazino/INBOX"
+set postponed="+magazino/Drafts"
+set record="+magazino/Sent"
+# offlineimap automatically creates this file
+source "~/.mutt/mailboxes"
 
 set pager_index_lines=10 	# number of index lines to show
 set pager_context=3     # number of context lines to show when scrolling
@@ -23,24 +31,31 @@ auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # Delete messages without asking when Mutt is quit
-set delete=yes
+set delete
+set confirmappend=no
 
+# forward options
 # ask if the whole message including attachments should be forwarded
 set mime_forward=ask-no
+set forward_format = "Fwd: %s"
+set include
+set forward_quote
 
 # speedup folders switch
-set sleep_time = 0
+set sleep_time=0
 
 # Macros
-set confirmappend=no
-macro index,pager D "<save-message>=Done\n<sync-mailbox>"
+macro index,pager D "<save-message>+magazino/Done\n<sync-mailbox>"
+
+# first, ignore all headers
+ignore *
+# then, show only these
+unignore from: to: cc: date: subject:
+# and in this order
+hdr_order from: to: cc: date: subject:
 
 # sidebar options
 set sidebar_visible=no
-
-# rebind keys for
-# G for end of pager
-# gg for start
 
 # colors from /usr/share/doc/mutt/examples
 color hdrdefault blue black
