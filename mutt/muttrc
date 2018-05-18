@@ -1,6 +1,8 @@
 # simplify folder change
 # cronjob for offlineimap
 # also update when the cursor is not moving
+# dunst notifications
+# notmuch for searching
 
 # SMTP setting (smtp_pass is set in sourced file)
 source "~/.mutt/mag_smtp"
@@ -41,8 +43,9 @@ set forward_format = "Fwd: %s"
 set include
 set forward_quote
 
-# speedup folders switch
-set sleep_time=0
+# faster mail checking
+set timeout = 15
+set mail_check = 60
 
 # Macros
 macro index,pager D "<save-message>+magazino/Done\n<sync-mailbox>"
