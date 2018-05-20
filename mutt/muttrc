@@ -1,7 +1,4 @@
 # simplify folder change
-# cronjob for offlineimap
-# also update when the cursor is not moving
-# dunst notifications
 # notmuch for searching
 
 # SMTP setting (smtp_pass is set in sourced file)
