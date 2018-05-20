@@ -22,6 +22,7 @@ set pager_stop=yes   # don't go to next message automatically
 set menu_scroll=yes   # scroll in menus
 set tilde=yes   # show tildes like in vim
 unset markers # no ugly plus signs
+set smart_wrap
 
 set editor="nvim -c 'set spell' -c 'set spelllang=de,en'"
 
@@ -46,6 +47,11 @@ set mail_check = 60
 
 # Macros
 macro index,pager D "<save-message>+magazino/Done\n<sync-mailbox>"
+
+# Status Bar
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
 
 # first, ignore all headers
 ignore *
