@@ -34,11 +34,14 @@ bindsym $mod+d exec dmenu_run
 # german keyboard layout
 exec setxkbmap -layout de
 
-# start redshift
-exec redshift
+# notifications for offlineimap
+exec '~/src/dotfiles/offlineimap_notify.py'
 
 # add key to authentication agent
 exec ssh-add
+
+# start redshift
+exec redshift-gtk
 
 # start nm-applet
 exec nm-applet
