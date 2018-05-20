@@ -1,6 +1,8 @@
 #!/bin/bash
 # sync offlineimap if you have connection to the internet
 # and you can ping your imap server successfully.
+# just add this to your crontab
+# */1 * * * * /home/user/src/dotfiles/offlineimap_sync.sh > /tmp/imap.log
 # shamelessly stolen from
 # https://hobo.house/2015/09/09/take-control-of-your-email-with-mutt-offlineimap-notmuch/
 
