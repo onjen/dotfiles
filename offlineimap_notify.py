@@ -20,11 +20,8 @@ for m in mailboxes.strip('\n').split(" "):
 def new_mail(event):
     with open(event.pathname, 'r') as f:
         mail = MaildirMessage(message=f)
-        print(mail)
         efrom = 'From: ' + mail['From']
-        print(efrom)
         esubject = 'Subject: ' + mail['Subject']
-        print(esubject)
         n = pynotify.Notification("New mail in " + '/'.join(
             event.path.split('/')[-3:-1]), efrom + "\n" + esubject)
         n.set_timeout(8000)
@@ -38,4 +35,5 @@ for box in boxes:
     watch_manager.add_watch(join(maildir, box, 'new'),
                             pyinotify.IN_CREATE | pyinotify.IN_MOVED_TO)
 
+print('running new mail notifier in a loop...')
 file_notifier.loop()
