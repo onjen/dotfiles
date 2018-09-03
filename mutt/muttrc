@@ -3,7 +3,7 @@
 
 # SMTP setting (smtp_pass is set in sourced file)
 source "~/.mutt/mag_smtp"
-set smtp_url='smtp://rothe@magazino.eu@mail.mein-exchange.de'
+set smtp_url='smtp.office365.com'
 set ssl_force_tls = yes
 set realname="Johannes Rothe"
 set from="rothe@magazino.eu"
@@ -27,7 +27,8 @@ set smart_wrap
 set editor="nvim -c 'set spell' -c 'set spelllang=de,en'"
 
 ## html view options
-auto_view text/html
+#auto_view text/html
+auto_view text/calendar application/ics
 alternative_order text/plain text/enriched text/html
 
 # Delete messages without asking when Mutt is quit
