@@ -21,9 +21,10 @@ localfolders = ~/Mail/magazino
 
 [Repository magazino-remote]
 type = IMAP
-remotehost = mail.mein-exchange.de
+remotehost = outlook.office365.com
 remoteuser = rothe@magazino.eu
 remotepassfile = ~/.password.offlineimap
+auth_mechanisms = GSSAPI, CRAM-MD5, PLAIN, LOGIN
 realdelete = no
 maxconnections = 3
 ssl = yes
