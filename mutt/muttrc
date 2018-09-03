@@ -27,8 +27,7 @@ set smart_wrap
 set editor="nvim -c 'set spell' -c 'set spelllang=de,en'"
 
 ## html view options
-#auto_view text/html
-auto_view text/calendar application/ics
+auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # Delete messages without asking when Mutt is quit
