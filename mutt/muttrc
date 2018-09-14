@@ -3,7 +3,7 @@
 
 # SMTP setting (smtp_pass is set in sourced file)
 source "~/.mutt/mag_smtp"
-set smtp_url='smtp.office365.com'
+set smtp_url='smtp://rothe@magazino.eu@smtp.office365.com'
 set ssl_force_tls = yes
 set realname="Johannes Rothe"
 set from="rothe@magazino.eu"
