@@ -61,21 +61,18 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: monospace # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Regular
+    family: "Roboto Mono for Powerline"
+    style: Regular
 
   # The bold font face
   bold:
-    family: monospace # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Bold
+    family: "Roboto Mono for Powerline"
+    style: Bold
 
   # The italic font face
   italic:
-    family: monospace # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Italic
+    family: "Roboto Mono for Powerline"
+    style: Italic
 
   # Point size of the font
   size: 9.0
@@ -97,12 +94,12 @@ font:
   # screens and make reading text a little easier.
   # On X11 it is possible to change the DPI for each instance of alacritty by using
   # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
-  scale_with_dpi: true
+  scale_with_dpi: false
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Should display the render timer
 render_timer: false
@@ -115,7 +112,7 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x0f0f14'
     foreground: '0xeaeaea'
 
     # (Optional) Bright and Dim foreground colors
