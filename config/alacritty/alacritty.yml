@@ -62,7 +62,7 @@ font:
   # The normal (roman) font face to use.
   normal:
     family: "Roboto Mono"
-    style: Medium
+    style: Regular
 
   # The bold font face
   bold:
