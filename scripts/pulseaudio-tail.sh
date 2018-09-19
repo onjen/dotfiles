@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sink=$(pactl list sinks | grep -B 1 RUNNING | head -n1 | sed 's/[A-Za-z# ]*//')
+sink=$(pactl list sinks short | grep RUNNING | cut -c1)
 
 volume_print() {
 
@@ -9,7 +9,7 @@ volume_print() {
     if [ "$muted" = true ]; then
         echo "$sink --"
     else
-        echo "$sink $(~/src/pamixer/pamixer --sink $sink --get-volume)"
+        echo "$sink: $(~/src/pamixer/pamixer --sink $sink --get-volume)"
     fi
 }
 
