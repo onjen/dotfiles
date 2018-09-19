@@ -57,7 +57,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 
 modules-left = i3
 #modules-center = mpd
-modules-right = cpu memory xbacklight pactl xkeyboard wlan eth temperature battery-combined date mail powermenu
+modules-right = spotify cpu memory xbacklight xkeyboard wlan eth temperature battery-combined date mail powermenu
 
 tray-position = right
 tray-padding = 2
@@ -441,6 +441,13 @@ type = custom/script
 exec = ~/src/dotfiles/scripts/battery.sh
 interval = 5.0
 format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+[module/spotify]
+type = custom/script
+exec = ~/src/dotfiles/scripts/spotify.sh
+interval = 1.0
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 
 [settings]
