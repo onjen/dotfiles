@@ -24,8 +24,11 @@ background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
-secondary = #e60053
+secondary = #3b3b3b
+light = #4e4e4e
 alert = #bd2c40
+green = #2b8029
+red = #802929
 
 [bar/thebar]
 monitor = ${env:MONITOR:eDP1}
@@ -40,8 +43,8 @@ bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-#line-size = 3
-#line-color = #f00
+line-size = 1
+line-color = #fff
 
 #border-size = 1
 #border-color = #00000000
@@ -208,7 +211,8 @@ type = internal/cpu
 interval = 2
 format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.secondary}
+
 label = %percentage:2%%
 
 [module/memory]
@@ -216,7 +220,7 @@ type = internal/memory
 interval = 2
 format-prefix = "MEM "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.secondary}
 label = %percentage_used%%
 
 [module/wlan]
@@ -226,12 +230,12 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 #format-connected = <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.green}
 label-connected = %essid% (%signal%%) %local_ip%
 
 format-disconnected = no_wifi
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-underline = ${colors.red}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -247,14 +251,14 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.green}
 #format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-underline = ${colors.red}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -268,7 +272,7 @@ time = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.light}
 
 label = %date% %time%
 
@@ -367,13 +371,15 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-#format = <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-#format-warn = <label-warn>
-format-warn-underline = ${self.format-underline}
+#format = <ramp> <label>
+format = <label>
+#format-warn = <ramp> <label-warn>
+format-underline = ${colors.secondary}
+format-warn = <label-warn>
+format-warn-underline = ${colors.red}
 
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
@@ -396,6 +402,7 @@ label-close = 
 label-close-foreground = ${colors.foreground-alt}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
+format-underline = ${colors.secondary}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -435,6 +442,7 @@ type = custom/script
 exec = ~/src/dotfiles/scripts/check_mail.sh
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.secondary}
 
 [module/battery-combined]
 type = custom/script
@@ -442,6 +450,7 @@ exec = ~/src/dotfiles/scripts/battery.sh
 interval = 5.0
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.secondary}
 
 [module/spotify]
 type = custom/script
@@ -449,6 +458,7 @@ exec = ~/src/dotfiles/scripts/spotify.sh
 interval = 1.0
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.secondary}
 
 [settings]
 screenchange-reload = true
