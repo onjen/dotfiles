@@ -37,7 +37,8 @@ set confirmappend=no
 # forward options
 # ask if the whole message including attachments should be forwarded
 set mime_forward=ask-no
-set forward_format = "Fwd: %s"
+#set forward_format = "Fwd: %s"
+set forward_format = "%s"
 set include
 set forward_quote
 
@@ -46,7 +47,8 @@ set timeout = 15
 set mail_check = 60
 
 # Macros
-macro index,pager D "<save-message>+magazino/Done\n<sync-mailbox>"
+macro index,pager D "<save-message>+magazino/Done<enter><sync-mailbox>"
+macro index,pager t "<forward-message>add.task.19025132.2196901048.bdb8e86d4bb9ff17@todoist.net<enter><enter><enter>
 
 # Status Bar
 set status_chars  = " *%A"
