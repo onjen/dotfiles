@@ -56,6 +56,11 @@ exec dropbox start
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
+# scratchpad
+exec chromium-browser --kiosk todoist.com
+for_window [instance="chromium-browser"] move scratchpad
+bindsym $mod+minus scratchpad show
+
 # no window title
 new_window 1pixel
 
